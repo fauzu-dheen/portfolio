@@ -18,7 +18,7 @@ import {
   User,
 } from 'lucide-react'
 import aiFiestaLogo from './assets/aifiesta.webp'
-import heroImg from './assets/hero.png'
+import profilePicture from './assets/profile-picture.jpeg'
 import prohostLogo from './assets/prohostai.webp'
 
 const fadeUp = {
@@ -289,7 +289,7 @@ function App() {
             <div className="relative overflow-hidden rounded-md border border-white/10 bg-white/5 p-3 shadow-2xl shadow-cyan-950/60 backdrop-blur">
               <img
                 className="aspect-square w-full rounded-md object-cover"
-                src={heroImg}
+                src={profilePicture}
                 alt="Fauzudheen Abdul Hameed profile artwork"
               />
               <div className="absolute inset-x-3 bottom-3 rounded-md border border-white/10 bg-slate-950/75 p-4 backdrop-blur-md">

@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
   <rect width="48" height="48" rx="10" fill="#070A12"/>
   <rect x="3" y="3" width="42" height="42" rx="8" fill="#0E1726" stroke="#67E8F9" stroke-width="2"/>
-  <path d="M18 35V13h15v4H23v5h8v4h-8v9h-5Z" fill="#CFFAFE"/>
-  <path d="M18 35V13h15v4H23v5h8v4h-8v9h-5Z" fill="url(#f-glow)" fill-opacity=".45"/>
+  <path d="M19 35V13h14v3.2h-9.5v5.6H31v3.2h-7.5V35H19Z" fill="#CFFAFE"/>
+  <path d="M19 35V13h14v3.2h-9.5v5.6H31v3.2h-7.5V35H19Z" fill="url(#f-glow)" fill-opacity=".45"/>
   <defs>
     <linearGradient id="f-glow" x1="17" x2="34" y1="13" y2="35" gradientUnits="userSpaceOnUse">
       <stop stop-color="#67E8F9"/>
