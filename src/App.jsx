@@ -5,13 +5,17 @@ import {
   Briefcase,
   Cloud,
   Code2,
+  CodeXml,
   Database,
   ExternalLink,
+  GitBranch,
   Mail,
+  Newspaper,
   Phone,
   Rocket,
   Server,
   Sparkles,
+  User,
 } from 'lucide-react'
 import aiFiestaLogo from './assets/aifiesta.webp'
 import heroImg from './assets/hero.png'
@@ -23,9 +27,70 @@ const fadeUp = {
 }
 
 function App() {
+  const contactLinks = [
+    {
+      label: 'Email',
+      value: 'fauzudheen2@gmail.com',
+      href: 'mailto:fauzudheen2@gmail.com',
+      icon: Mail,
+    },
+    {
+      label: 'Phone',
+      value: '+91 90612 45502',
+      href: 'tel:+919061245502',
+      icon: Phone,
+    },
+    {
+      label: 'LinkedIn',
+      value: 'fauzudheen-abdul-hameed',
+      href: 'https://www.linkedin.com/in/fauzudheen-abdul-hameed/',
+      icon: User,
+    },
+    {
+      label: 'GitHub',
+      value: 'fauzudheen',
+      href: 'https://github.com/fauzudheen',
+      icon: GitBranch,
+    },
+    {
+      label: 'LeetCode',
+      value: 'fauzudheen1',
+      href: 'https://leetcode.com/u/fauzudheen1/',
+      icon: CodeXml,
+    },
+    {
+      label: 'Medium',
+      value: '@fauzudheen1',
+      href: 'https://medium.com/@fauzudheen1',
+      icon: Newspaper,
+    },
+  ]
+
   const metrics = [
-    { value: '60K+', label: 'AI images generated weekly after Image Studio launch' },
-    { value: '200+', label: 'active listings supported through ProhostAI features' },
+    {
+      value: '60K+',
+      label: (
+        <>
+          AI images generated weekly at{' '}
+          <span className="bg-gradient-to-r from-cyan-200 to-amber-200 bg-clip-text font-black text-transparent">
+            AIFiesta
+          </span>{' '}
+          after Image Studio launch
+        </>
+      ),
+    },
+    {
+      value: '200+',
+      label: (
+        <>
+          active listings supported through{' '}
+          <span className="bg-gradient-to-r from-orange-200 to-cyan-200 bg-clip-text font-black text-transparent">
+            ProhostAI
+          </span>{' '}
+          features
+        </>
+      ),
+    },
     { value: '97.26', label: 'CAT percentile, top 3% of test takers' },
   ]
 
@@ -33,10 +98,10 @@ function App() {
     {
       company: 'AIFiesta',
       role: 'Junior Software Developer',
-      period: 'Dec 2024 - May 2026',
       summary:
         'Multimodal AI platform for comparing, creating, and interacting with multiple leading AI models in one real-time workspace.',
       image: aiFiestaLogo,
+      url: 'https://aifiesta.ai/',
       tags: ['NestJS', 'PostgreSQL', 'Supabase', 'Redis', 'Langfuse', 'PostHog'],
       highlights: [
         'Built Image Studio for multi-model AI image generation, scaling to about 60,000 images per week after launch.',
@@ -50,10 +115,10 @@ function App() {
       company: 'ProhostAI',
       badge: 'YC S24',
       role: 'Junior Software Developer',
-      period: 'Dec 2024 - May 2026',
       summary:
         'AI property manager for listings, bookings, guest operations, cleanings, guidebooks, and host analytics.',
       image: prohostLogo,
+      url: 'https://www.prohost.ai/',
       tags: ['Python', 'FastAPI', 'SQLAlchemy', 'Alembic', 'AWS', 'Stripe'],
       highlights: [
         'Built host-facing features including Earnings, Guidebooks, Cleanings, and Analytics.',
@@ -105,6 +170,7 @@ function App() {
       description:
         'A social platform for IT professionals with posts, communities, JWT auth, WebSockets, and real-time chat.',
       stack: ['Django', 'DRF', 'React', 'Redux', 'Tailwind', 'Docker', 'AWS EKS'],
+      repo: 'https://github.com/fauzudheen/wimble',
     },
     {
       title: 'SoleMate',
@@ -112,6 +178,7 @@ function App() {
       description:
         'A shoe commerce platform with secure checkout, Razorpay payments, admin inventory controls, and responsive UI.',
       stack: ['Django', 'PostgreSQL', 'Razorpay', 'Bootstrap', 'AWS EC2', 'NGINX'],
+      repo: 'https://github.com/fauzudheen/SoleMate-Ecommerce',
     },
   ]
 
@@ -192,6 +259,23 @@ function App() {
                 fauzudheen2@gmail.com
               </a>
             </motion.div>
+            <motion.div className="mt-6 flex flex-wrap gap-2" variants={fadeUp}>
+              {contactLinks.slice(2).map((link) => {
+                const Icon = link.icon
+                return (
+                  <a
+                    className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-slate-950/40 px-3 py-2 text-xs font-bold text-slate-200 transition hover:border-cyan-300/50 hover:text-cyan-100"
+                    href={link.href}
+                    key={link.label}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <Icon size={15} />
+                    {link.label}
+                  </a>
+                )
+              })}
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -243,16 +327,19 @@ function App() {
         <SectionHeader
           eyebrow="Work Experience"
           icon={Briefcase}
-          title="Production work across AI platforms and property automation."
         />
         <div className="mt-10 grid gap-6">
           {experiences.map((experience, index) => (
-            <motion.article
-              className="group overflow-hidden rounded-md border border-white/10 bg-slate-900/70 shadow-xl shadow-slate-950/40 backdrop-blur"
+            <motion.a
+              className="group block overflow-hidden rounded-md border border-white/10 bg-slate-900/70 shadow-xl shadow-slate-950/40 backdrop-blur transition-colors hover:border-cyan-300/35"
+              href={experience.url}
               initial={{ opacity: 0, y: 34 }}
               key={experience.company}
+              rel="noreferrer"
+              target="_blank"
               transition={{ delay: index * 0.08, duration: 0.65, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-80px' }}
+              whileHover={{ y: -8 }}
               whileInView={{ opacity: 1, y: 0 }}
             >
               <div className="grid gap-6 p-6 lg:grid-cols-[220px_1fr] lg:p-8">
@@ -262,12 +349,9 @@ function App() {
                     src={experience.image}
                     alt={`${experience.company} logo`}
                   />
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
-                      {experience.period}
-                    </p>
-                    <p className="mt-2 text-sm text-slate-400">Fleapo, Kolkata</p>
-                  </div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
+                    Fleapo, Kolkata
+                  </p>
                 </div>
                 <div>
                   <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
@@ -285,15 +369,12 @@ function App() {
                       </div>
                       <p className="mt-2 text-base font-semibold text-amber-200">{experience.role}</p>
                     </div>
-                    <a
+                    <span
                       aria-label={`Open ${experience.company}`}
-                      className="grid size-11 shrink-0 place-items-center rounded-md border border-white/10 bg-white/5 text-cyan-100 transition hover:border-amber-300/60 hover:text-amber-200"
-                      href={experience.company === 'ProhostAI' ? 'https://www.prohost.ai/' : 'https://play.google.com/store/apps/details?id=com.fiesta.ai'}
-                      rel="noreferrer"
-                      target="_blank"
+                      className="grid size-11 shrink-0 place-items-center rounded-md border border-white/10 bg-white/5 text-cyan-100 transition group-hover:border-amber-300/60 group-hover:text-amber-200"
                     >
                       <ExternalLink size={19} />
-                    </a>
+                    </span>
                   </div>
                   <p className="mt-4 max-w-3xl leading-7 text-slate-300">{experience.summary}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
@@ -315,7 +396,7 @@ function App() {
                   </ul>
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </section>
@@ -325,7 +406,6 @@ function App() {
           <SectionHeader
             eyebrow="Technical Skills"
             icon={Rocket}
-            title="A toolkit for building, shipping, and monitoring AI products."
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {skillGroups.map((group, index) => {
@@ -364,14 +444,16 @@ function App() {
         <SectionHeader
           eyebrow="Personal Projects"
           icon={Code2}
-          title="Full-stack projects that show product thinking and deployment skills."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {projects.map((project, index) => (
-            <motion.article
-              className="rounded-md border border-white/10 bg-slate-900/70 p-6 shadow-xl shadow-slate-950/40"
+            <motion.a
+              className="group block rounded-md border border-white/10 bg-slate-900/70 p-6 shadow-xl shadow-slate-950/40 transition-colors hover:border-cyan-300/35"
+              href={project.repo}
               initial={{ opacity: 0, y: 26 }}
               key={project.title}
+              rel="noreferrer"
+              target="_blank"
               transition={{ delay: index * 0.08, duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
@@ -387,7 +469,14 @@ function App() {
                   </span>
                 ))}
               </div>
-            </motion.article>
+              <span
+                className="mt-7 inline-flex items-center gap-2 rounded-md border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100 transition group-hover:border-cyan-200/60"
+              >
+                <GitBranch size={16} />
+                GitHub
+                <ExternalLink size={15} />
+              </span>
+            </motion.a>
           ))}
         </div>
       </section>
@@ -402,21 +491,32 @@ function App() {
               modern frontend development, and production product delivery.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <a
-              className="inline-flex items-center gap-2 rounded-md bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
-              href="mailto:fauzudheen2@gmail.com"
-            >
-              <Mail size={17} />
-              Email
-            </a>
-            <a
-              className="inline-flex items-center gap-2 rounded-md border border-slate-950/20 px-5 py-3 text-sm font-bold transition hover:bg-white/40"
-              href="tel:+919061245502"
-            >
-              <Phone size={17} />
-              +91 90612 45502
-            </a>
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {contactLinks.map((link) => {
+              const Icon = link.icon
+              const isExternal = link.href.startsWith('http')
+
+              return (
+                <a
+                  className="group rounded-md border border-slate-950/15 bg-white/30 p-4 text-left transition hover:bg-white/55"
+                  href={link.href}
+                  key={link.label}
+                  rel={isExternal ? 'noreferrer' : undefined}
+                  target={isExternal ? '_blank' : undefined}
+                >
+                  <span className="flex items-center justify-between gap-4">
+                    <span className="inline-flex items-center gap-2 text-sm font-black">
+                      <Icon size={17} />
+                      {link.label}
+                    </span>
+                    {isExternal && <ExternalLink className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" size={15} />}
+                  </span>
+                  <span className="mt-2 block break-words text-sm font-semibold text-slate-800">
+                    {link.value}
+                  </span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -424,7 +524,7 @@ function App() {
   )
 }
 
-function SectionHeader({ eyebrow, icon: Icon, title }) {
+function SectionHeader({ eyebrow, icon: Icon }) {
   return (
     <motion.div
       className="max-w-3xl"
@@ -438,7 +538,6 @@ function SectionHeader({ eyebrow, icon: Icon, title }) {
         <Icon size={17} />
         {eyebrow}
       </p>
-      <h2 className="mt-3 text-4xl font-black text-white sm:text-5xl">{title}</h2>
     </motion.div>
   )
 }
