@@ -137,7 +137,7 @@ function App() {
       skills: ['Python', 'FastAPI', 'Django', 'DRF', 'NestJS', 'Redis'],
     },
     {
-      title: 'Data',
+      title: 'Database',
       icon: Database,
       skills: ['PostgreSQL', 'Supabase', 'SQLAlchemy', 'Alembic'],
     },
@@ -168,7 +168,7 @@ function App() {
       title: 'Wimble',
       type: 'Social Media Platform',
       description:
-        'A social platform for IT professionals with posts, communities, profiles, and real-time conversations.',
+        'A social platform for IT professionals with posts, communities, profiles, real-time conversations, and collaboration spaces.',
       stack: ['Django', 'DRF', 'React', 'Redux', 'Tailwind', 'Docker', 'AWS EKS'],
       repo: 'https://github.com/fauzudheen/wimble',
     },
