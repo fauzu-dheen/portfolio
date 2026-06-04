@@ -239,7 +239,6 @@ function App() {
               className="inline-flex items-center gap-2 rounded-md border border-cyan-300/20 bg-cyan-300/10 px-3 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200"
               variants={fadeUp}
             >
-              <Sparkles size={16} />
               Software Engineer | AI Integrations
             </motion.p>
             <motion.h1
