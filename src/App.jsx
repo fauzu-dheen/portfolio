@@ -1,26 +1,21 @@
 import { motion } from 'framer-motion'
 import {
   ArrowUpRight,
-  Award,
   Brain,
   Briefcase,
   Cloud,
   Code2,
   Database,
   ExternalLink,
-  GraduationCap,
   Mail,
   Phone,
   Rocket,
   Server,
   Sparkles,
 } from 'lucide-react'
+import aiFiestaLogo from './assets/aifiesta.webp'
 import heroImg from './assets/hero.png'
-
-const aiFiestaLogo =
-  'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/85/5d/b2/855db209-d1b4-e3d6-d3fb-b56acbe9c93e/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/512x512bb.jpg'
-
-const prohostLogo = 'https://www.prohost.ai/logo-dark.svg'
+import prohostLogo from './assets/prohostai.webp'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -53,10 +48,11 @@ function App() {
     },
     {
       company: 'ProhostAI',
+      badge: 'YC S24',
       role: 'Junior Software Developer',
       period: 'Dec 2024 - May 2026',
       summary:
-        'YC S24 AI property manager for listings, bookings, guest operations, cleanings, guidebooks, and host analytics.',
+        'AI property manager for listings, bookings, guest operations, cleanings, guidebooks, and host analytics.',
       image: prohostLogo,
       tags: ['Python', 'FastAPI', 'SQLAlchemy', 'Alembic', 'AWS', 'Stripe'],
       highlights: [
@@ -119,21 +115,12 @@ function App() {
     },
   ]
 
-  const achievements = [
-    'Mentored bootcamp juniors with technical support, communication guidance, and career advice.',
-    'Completed a 30-week intensive full-stack bootcamp at Brototype, Calicut.',
-    'Bachelor of Commerce in Finance from University of Calicut with 8.4 CGPA.',
-    'State Mathematics Fair A Grade in 2019 and 3rd rank in 2018.',
-    'CBSE Certificate of Merit for scoring 100/100 in Social Science.',
-    'School topper among 300+ students in 12th board exam.',
-  ]
-
   return (
     <main className="min-h-screen overflow-hidden bg-[#070a12] text-white">
       <div className="pointer-events-none fixed inset-0 z-0 grid-backdrop opacity-60" />
       <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_20%_12%,rgba(34,211,238,0.15),transparent_26%),radial-gradient(circle_at_82%_8%,rgba(245,158,11,0.12),transparent_24%),linear-gradient(180deg,rgba(7,10,18,0)_0%,#070a12_82%)]" />
 
-      <section className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-6 sm:px-8 lg:px-10">
+      <section className="relative z-10 flex min-h-screen w-full flex-col px-6 py-6 sm:px-8 lg:px-12 xl:px-16">
         <motion.header
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center justify-between border-b border-white/10 pb-5"
@@ -180,15 +167,14 @@ function App() {
               className="mt-6 max-w-4xl text-5xl font-black leading-[1.02] text-white sm:text-7xl lg:text-8xl"
               variants={fadeUp}
             >
-              I build reliable AI-powered products from backend to interface.
+              I build AI-powered web apps that work well.
             </motion.h1>
             <motion.p
               className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl"
               variants={fadeUp}
             >
-              Software engineer experienced in scalable backend systems, modern
-              React frontends, observability, cloud deployments, and LLM product
-              integrations across real production platforms.
+              I work across backend systems, React interfaces, cloud deployments,
+              and LLM integrations for real production products.
             </motion.p>
             <motion.div className="mt-8 flex flex-wrap gap-3" variants={fadeUp}>
               <a
@@ -236,7 +222,7 @@ function App() {
       </section>
 
       <section className="relative z-10 border-y border-white/10 bg-white/[0.03]">
-        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-8 sm:px-8 md:grid-cols-3 lg:px-10">
+        <div className="grid w-full gap-4 px-6 py-8 sm:px-8 md:grid-cols-3 lg:px-12 xl:px-16">
           {metrics.map((metric, index) => (
             <motion.div
               className="rounded-md border border-white/10 bg-slate-950/60 p-5"
@@ -253,7 +239,7 @@ function App() {
         </div>
       </section>
 
-      <section id="experience" className="relative z-10 mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-10">
+      <section id="experience" className="relative z-10 w-full px-6 py-24 sm:px-8 lg:px-12 xl:px-16">
         <SectionHeader
           eyebrow="Work Experience"
           icon={Briefcase}
@@ -272,7 +258,7 @@ function App() {
               <div className="grid gap-6 p-6 lg:grid-cols-[220px_1fr] lg:p-8">
                 <div className="flex h-full flex-col justify-between gap-8 rounded-md border border-white/10 bg-white/[0.04] p-5">
                   <img
-                    className="h-16 w-16 rounded-md bg-white object-contain p-2"
+                    className="h-16 w-16 rounded-md object-contain"
                     src={experience.image}
                     alt={`${experience.company} logo`}
                   />
@@ -286,7 +272,17 @@ function App() {
                 <div>
                   <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                     <div>
-                      <h3 className="text-3xl font-black text-white">{experience.company}</h3>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-3xl font-black text-white">{experience.company}</h3>
+                        {experience.badge && (
+                          <span className="inline-flex items-center gap-2 rounded-md border border-orange-400/30 bg-orange-400/10 px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-orange-100">
+                            <span className="grid size-5 place-items-center rounded-sm bg-[#ff5a1f] text-[13px] font-black leading-none text-white">
+                              Y
+                            </span>
+                            {experience.badge.replace('YC ', '')}
+                          </span>
+                        )}
+                      </div>
                       <p className="mt-2 text-base font-semibold text-amber-200">{experience.role}</p>
                     </div>
                     <a
@@ -325,7 +321,7 @@ function App() {
       </section>
 
       <section id="skills" className="relative z-10 border-y border-white/10 bg-white/[0.03]">
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-10">
+        <div className="w-full px-6 py-24 sm:px-8 lg:px-12 xl:px-16">
           <SectionHeader
             eyebrow="Technical Skills"
             icon={Rocket}
@@ -364,7 +360,7 @@ function App() {
         </div>
       </section>
 
-      <section id="projects" className="relative z-10 mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-10">
+      <section id="projects" className="relative z-10 w-full px-6 py-24 sm:px-8 lg:px-12 xl:px-16">
         <SectionHeader
           eyebrow="Personal Projects"
           icon={Code2}
@@ -396,26 +392,8 @@ function App() {
         </div>
       </section>
 
-      <section className="relative z-10 border-t border-white/10 bg-white/[0.03]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:px-10">
-          <SectionHeader
-            eyebrow="Education & Achievements"
-            icon={GraduationCap}
-            title="A non-linear path with strong fundamentals and mentoring experience."
-          />
-          <div className="grid gap-3">
-            {achievements.map((achievement) => (
-              <div className="flex gap-3 rounded-md border border-white/10 bg-slate-950/55 p-4" key={achievement}>
-                <Award className="mt-1 shrink-0 text-cyan-200" size={18} />
-                <p className="text-sm leading-6 text-slate-300">{achievement}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="contact" className="relative z-10 border-t border-white/10 bg-cyan-300 text-slate-950">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-16 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
+        <div className="flex w-full flex-col gap-8 px-6 py-16 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-12 xl:px-16">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.2em]">Contact</p>
             <h2 className="mt-3 text-4xl font-black sm:text-5xl">Let us build something reliable.</h2>
