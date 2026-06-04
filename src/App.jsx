@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import {
-  ArrowUpRight,
+  ArrowDown,
   Brain,
   Briefcase,
   Cloud,
@@ -249,7 +249,7 @@ function App() {
                 href="#experience"
               >
                 View Experience
-                <ArrowUpRight className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" size={17} />
+                <ArrowDown className="transition group-hover:translate-y-0.5" size={17} />
               </a>
               <a
                 className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-5 py-3 text-sm font-bold text-white backdrop-blur transition hover:border-amber-300/60 hover:text-amber-100"
