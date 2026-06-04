@@ -294,10 +294,10 @@ function App() {
               />
               <div className="absolute inset-x-3 bottom-3 rounded-md border border-white/10 bg-slate-950/75 p-4 backdrop-blur-md">
                 <p className="text-sm font-semibold text-cyan-100">
-                  AI integrations, backend systems, and polished interfaces.
+                  Software Engineer
                 </p>
                 <p className="mt-1 text-xs text-slate-300">
-                  Python, FastAPI, React, AWS, observability, and LLM APIs.
+                  Backend, Frontend, Deployments, LLM integrations, and Observability
                 </p>
               </div>
             </div>
