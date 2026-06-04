@@ -113,7 +113,7 @@ function App() {
     },
     {
       company: 'ProhostAI',
-      badge: 'YC S24',
+      badge: 'Y Combinator S24',
       role: 'Junior Software Developer',
       summary:
         'AI property manager for listings, bookings, guest operations, cleanings, guidebooks, and host analytics.',
@@ -168,7 +168,7 @@ function App() {
       title: 'Wimble',
       type: 'Social Media Platform',
       description:
-        'A social platform for IT professionals with posts, communities, JWT auth, WebSockets, and real-time chat.',
+        'A social platform for IT professionals with posts, communities, profiles, and real-time conversations.',
       stack: ['Django', 'DRF', 'React', 'Redux', 'Tailwind', 'Docker', 'AWS EKS'],
       repo: 'https://github.com/fauzudheen/wimble',
     },
@@ -176,7 +176,7 @@ function App() {
       title: 'SoleMate',
       type: 'E-Commerce Platform',
       description:
-        'A shoe commerce platform with secure checkout, Razorpay payments, admin inventory controls, and responsive UI.',
+        'A shoe shopping platform with product browsing, secure checkout, payments, and admin inventory controls.',
       stack: ['Django', 'PostgreSQL', 'Razorpay', 'Bootstrap', 'AWS EC2', 'NGINX'],
       repo: 'https://github.com/fauzudheen/SoleMate-Ecommerce',
     },
@@ -363,7 +363,7 @@ function App() {
                             <span className="grid size-5 place-items-center rounded-sm bg-[#ff5a1f] text-[13px] font-black leading-none text-white">
                               Y
                             </span>
-                            {experience.badge.replace('YC ', '')}
+                            {experience.badge}
                           </span>
                         )}
                       </div>
