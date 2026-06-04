@@ -12,9 +12,11 @@ import {
   Mail,
   Newspaper,
   Phone,
+  Plug,
   Rocket,
   Server,
   Sparkles,
+  TestTube,
   User,
 } from 'lucide-react'
 import aiFiestaLogo from './assets/aifiesta.webp'
@@ -144,12 +146,17 @@ function App() {
     {
       title: 'Frontend',
       icon: Code2,
-      skills: ['React', 'TypeScript', 'TanStack Query', 'Tailwind CSS', 'JavaScript'],
+      skills: ['React', 'TypeScript', 'TanStack Query', 'Tailwind CSS', 'JavaScript', 'HTML', 'CSS', 'Bootstrap'],
     },
     {
       title: 'Cloud & DevOps',
       icon: Cloud,
-      skills: ['Docker', 'GitHub Actions', 'AWS EC2', 'EKS', 'S3', 'SQS', 'Lambda'],
+      skills: ['Docker', 'Git', 'GitHub Actions', 'AWS EC2', 'EKS', 'S3', 'SQS', 'EventBridge', 'Lambda'],
+    },
+    {
+      title: 'APIs & Integrations',
+      icon: Plug,
+      skills: ['Stripe', 'Airbnb API', 'Hostaway API', 'Langfuse', 'Razorpay'],
     },
     {
       title: 'AI APIs',
@@ -159,7 +166,12 @@ function App() {
     {
       title: 'Observability',
       icon: Sparkles,
-      skills: ['PostHog', 'Grafana', 'Prometheus', 'OpenTelemetry', 'Tempo', 'Langfuse'],
+      skills: ['PostHog', 'Grafana', 'Prometheus', 'OpenTelemetry', 'Tempo'],
+    },
+    {
+      title: 'Tools & Testing',
+      icon: TestTube,
+      skills: ['Pytest', 'Postman', 'Swagger', 'Supabase CLI'],
     },
   ]
 
